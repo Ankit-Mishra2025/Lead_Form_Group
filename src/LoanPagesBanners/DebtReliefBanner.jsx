@@ -1,6 +1,6 @@
 import React from "react";
 import DebtLoanMan from "../assets/DebtReliefMan.jpg";
-import { navigateToLoanForm} from "../utils/navigationHelpers";
+import { navigateToLoanForm} from "../Utils/navigationHelpers";
 import { useNavigate } from "react-router-dom";
 
 const DebtReliefBanner = () => {

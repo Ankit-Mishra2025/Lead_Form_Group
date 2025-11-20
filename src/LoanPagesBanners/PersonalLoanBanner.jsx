@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import HappyMen from "../assets/NewHappyMen.jpg";
-import { navigateToLoanForm} from "../utils/navigationHelpers";
+import { navigateToLoanForm} from "../Utils/navigationHelpers";
+
 
 
 const PersonalLoanBanner = () => {
