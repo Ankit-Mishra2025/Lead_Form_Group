@@ -5,7 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import {formRegistry} from '../FormsRegistery/formRegistry.js'
 
 const Loader = () => (
-  <div className="flex justify-center items-center min-h-[200px]">
+  <div className="flex justify-center items-center min-h-screen">
     Data Loading...
   </div>
 );
