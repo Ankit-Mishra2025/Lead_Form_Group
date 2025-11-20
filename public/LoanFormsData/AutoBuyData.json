@@ -1,0 +1,68 @@
+[
+  {
+    "brands": [
+      {
+        "name": "Maruti Suzuki",
+        "models": ["Swift", "Baleno", "Dzire", "Ertiga", "WagonR"]
+      },
+      {
+        "name": "Hyundai",
+        "models": ["i10", "i20", "Creta", "Venue", "Verna"]
+      },
+      {
+        "name": "Tata Motors",
+        "models": ["Nexon", "Altroz", "Harrier", "Punch", "Safari"]
+      },
+      {
+        "name": "Mahindra",
+        "models": ["XUV700", "Thar", "Scorpio", "Bolero", "XUV300"]
+      },
+      {
+        "name": "Honda",
+        "models": ["City", "Amaze", "Jazz", "WR-V", "Civic"]
+      },
+      {
+        "name": "Toyota",
+        "models": ["Innova Crysta", "Fortuner", "Glanza", "Hyryder", "Camry"]
+      },
+      {
+        "name": "Kia",
+        "models": ["Seltos", "Sonet", "Carens", "EV6", "Carnival"]
+      },
+      {
+        "name": "MG Motors",
+        "models": ["Hector", "Astor", "Gloster", "ZS EV"]
+      },
+      {
+        "name": "Volkswagen",
+        "models": ["Polo", "Virtus", "Taigun", "Tiguan"]
+      },
+      {
+        "name": "Skoda",
+        "models": ["Slavia", "Kushaq", "Superb", "Octavia"]
+      }
+    ],
+
+    "fuelTypes": ["Petrol", "Diesel", "CNG"],
+
+    "locations": [
+      "Delhi",
+      "Mumbai",
+      "Bangalore",
+      "Chennai",
+      "Hyderabad",
+      "Pune",
+      "Kolkata",
+      "Ahmedabad",
+      "Chandigarh",
+      "Jaipur",
+      "Lucknow",
+      "Indore",
+      "Surat",
+      "Bhopal",
+      "Nagpur"
+    ],
+
+    "seatOptions": ["3 Seater", "5 Seater", "7 Seater"]
+  }
+]
