@@ -1,14 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { navigateToLoanForm} from "../Utils/navigationHelpers";
-
+import { navigateToLoanForm } from "../utils/navigationHelpers";
 
 const VehicleBanner = () => {
   const navigate = useNavigate();
 
   const handleCompareRates = () => {
-     navigateToLoanForm(navigate, "vehicleSelection"); // ✅ fixed param
+    navigateToLoanForm(navigate, "vehicleSelection"); // ✅ fixed param
   };
 
   // const handleVehcileTypeSelection=()=>{
@@ -28,13 +27,13 @@ const VehicleBanner = () => {
             </h2>
             <p className="w-[500px] mt-3 text-gray-700 text-[18px]">
               Need to consolidate debt or make a large purchase? We bring the
-              multiple varities of cars to you so you can shop and compare with multiple vehicles offers in
-              minutes.
+              multiple varities of cars to you so you can shop and compare with
+              multiple vehicles offers in minutes.
             </p>
-            <button onClick={handleCompareRates}
-             
+            <button
+              onClick={handleCompareRates}
               className="mt-4 ml-2 px-8 py-3 bg-green-600 text-white text-[17px] rounded-md font-bold cursor-pointer hover:bg-green-700 transition"
-            > 
+            >
               Purchase
             </button>
           </div>

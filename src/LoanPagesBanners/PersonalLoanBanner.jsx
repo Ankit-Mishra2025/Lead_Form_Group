@@ -1,14 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { navigateToLoanForm} from "../Utils/navigationHelpers";
-
-
+import { navigateToLoanForm } from "../utils/navigationHelpers";
 
 const PersonalLoanBanner = () => {
   const navigate = useNavigate();
 
   const handleCompareRates = () => {
-     navigateToLoanForm(navigate, "personalLoan"); // ✅ fixed param
+    navigateToLoanForm(navigate, "personalLoan"); // ✅ fixed param
   };
 
   return (

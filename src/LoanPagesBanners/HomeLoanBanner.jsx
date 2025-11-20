@@ -1,17 +1,16 @@
 import React from "react";
 import HomeLoanMan from "../assets/HomeLoanMan.jpg";
 import { useNavigate } from "react-router-dom";
-import { navigateToLoanForm} from "../Utils/navigationHelpers";
+import { navigateToLoanForm } from "../utils/navigationHelpers";
 
 const HomeLoanBanner = () => {
- const navigate = useNavigate();
+  const navigate = useNavigate();
 
- const handleHomeLoanCompareRates = () => {
-     navigateToLoanForm(navigate,"homeLoan" ); // ✅ fixed param
+  const handleHomeLoanCompareRates = () => {
+    navigateToLoanForm(navigate, "homeLoan"); // ✅ fixed param
   };
 
   return (
-
     <div className="w-full h-[450px] bg-gray-100 relative">
       <div className="flex w-full p-5 ">
         <div className="flex justify-between items-center w-full">
@@ -23,26 +22,31 @@ const HomeLoanBanner = () => {
               Put your home’s equity to use
             </h2>
             <p className="w-[400px] mt-3 text-gray-700 text-[18px]">
-             With home values higher than ever, now’s the time to make the most of your equity. Compare offers in minutes.
+              With home values higher than ever, now’s the time to make the most
+              of your equity. Compare offers in minutes.
             </p>
             <div className="flex items-center gap-5">
-<button className="mt-4 ml-2 w-50 px-8 py-3 bg-green-600 text-white text-[17px] rounded-md font-bold cursor-pointer" onClick={handleHomeLoanCompareRates}>
-              Compare Rates
-            </button>
+              <button
+                className="mt-4 ml-2 w-50 px-8 py-3 bg-green-600 text-white text-[17px] rounded-md font-bold cursor-pointer"
+                onClick={handleHomeLoanCompareRates}
+              >
+                Compare Rates
+              </button>
 
-<button className="mt-4 ml-2 w-50 px-8 py-3 border border-green-600 text-[17px] rounded-md font-bold cursor-pointer">
-               Read More
-            </button>
-
+              <button className="mt-4 ml-2 w-50 px-8 py-3 border border-green-600 text-[17px] rounded-md font-bold cursor-pointer">
+                Read More
+              </button>
             </div>
-            
           </div>
 
-          <img src={HomeLoanMan} className="h-[380px] w-[400px] ml-5 rounded-md" />
+          <img
+            src={HomeLoanMan}
+            className="h-[380px] w-[400px] ml-5 rounded-md"
+          />
         </div>
       </div>
     </div>
   );
 };
 
-export default  HomeLoanBanner;
+export default HomeLoanBanner;
