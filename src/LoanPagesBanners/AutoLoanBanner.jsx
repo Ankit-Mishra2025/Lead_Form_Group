@@ -1,7 +1,7 @@
 import React from "react";
 import AutoLoanMan from "../assets/AutoLoan.jpg";
 import { useNavigate } from "react-router-dom";
-import { navigateToLoanForm } from "../utils/navigationHelpers.js";
+import { navigateToLoanForm } from "../Utils/navigationHelpers.js";
 
 const AutoLoanBanner = () => {
   const navigate = useNavigate();

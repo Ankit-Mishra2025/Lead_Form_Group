@@ -1,6 +1,6 @@
 import React from "react";
 import HomeRefinance from "../assets/HomeRefinance.jpg";
-import { navigateToLoanForm } from "../utils/navigationHelpers.js";
+import { navigateToLoanForm } from "../Utils/navigationHelpers.js";
 import { useNavigate } from "react-router-dom";
 
 const HomePurchaseLoanBanner = () => {
