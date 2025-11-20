@@ -209,7 +209,7 @@ export default function HomeLoan() {
                   {...rhfField}
                   placeholder="Enter 10-digit phone number"
                   maxLength={10}
-                  className={`w-[220px] mt-5 border rounded-xl px-3 py-3 sm:px-8 sm:py-4 text-[15px] sm:text-[16px] md:text-[16px]  text-gray-900 placeholder-gray-400 outline-none transition-all duration-200 focus:ring-1 focus:ring-green-500 `}
+                  className={`w-[220px] md:w-full mt-5 border rounded-xl px-3 py-3 sm:px-8 sm:py-4 text-[15px] sm:text-[16px] md:text-[16px]  text-gray-900 placeholder-gray-400 outline-none transition-all duration-200 focus:ring-1 focus:ring-green-500 `}
                 />
               )}
             />

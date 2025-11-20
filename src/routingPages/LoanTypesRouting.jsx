@@ -6,7 +6,7 @@ import {formRegistry} from '../FormsRegistery/formRegistry.js'
 
 const Loader = () => (
   <div className="flex justify-center items-center min-h-[200px]">
-    Loading...
+    Data Loading...
   </div>
 );
 
