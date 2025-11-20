@@ -6,6 +6,7 @@ import { navigateToLoanForm } from "../Utils/navigationHelpers.js";
 const AutoLoanBanner = () => {
   const navigate = useNavigate();
 
+  
   const handleCompareRates = () => {
     navigateToLoanForm(navigate, "autoLoan"); // ✅ fixed param
   };
