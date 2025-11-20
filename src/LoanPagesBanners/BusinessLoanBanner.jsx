@@ -1,7 +1,7 @@
 import React from "react";
 import BusinessLoanMan from "../assets/BusinessLoanMan.jpg";
 import { useNavigate } from "react-router-dom";
-import { navigateToLoanForm } from "../utils/navigationHelpers";
+import { navigateToLoanForm } from "../utils/navigationHelpers.js";
 
 const BusinessLoanBanner = () => {
   const navigate = useNavigate();

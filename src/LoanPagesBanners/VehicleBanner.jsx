@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { navigateToLoanForm } from "../utils/navigationHelpers";
+import { navigateToLoanForm } from "../utils/navigationHelpers.js";
 
 const VehicleBanner = () => {
   const navigate = useNavigate();
