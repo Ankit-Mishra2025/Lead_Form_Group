@@ -10,6 +10,8 @@ import {
   ChevronRight,
   ChevronLeft,
   Car,
+  House,
+  HouseHeartIcon,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -30,8 +32,8 @@ const HomeCarousel = () => {
 
   const allItems = [
     { name: "Personal Loans", icon: <DollarSign size={24} />, banner: <PersonalLoanBanner /> },
-    { name: "Home Loans", icon: <Building size={24} />, banner: <HomeLoanBanner /> },
-    { name: "Home Purchase", icon: <Building size={24} />, banner: <HomePurchaseLoanBanner /> },
+    { name: "Home Loans", icon: <House size={24} />, banner: <HomeLoanBanner /> },
+    { name: "Home Purchase", icon: <HouseHeartIcon size={24} />, banner: <HomePurchaseLoanBanner /> },
     { name: "Insurance", icon: <Shield size={24} />, },
     { name: "Business Loan", icon: <Briefcase size={24} />, banner: <BusinessLoanBanner/>  },
     { name: "Credit Score", icon: <TrendingUp size={24} />, },
@@ -84,29 +86,30 @@ const HomeCarousel = () => {
     <>
       {/* ✅ Heading */}
       <div className="text-center mt-12 mb-8 py-5">
-        <h2 className="font-bold text-4xl text-gray-800 mt-5">
+        <h2 className="font-bold text-[40px] text-gray-800 mt-5">
           When banks compete,{" "}
           <span className="text-green-600">you win.</span>
         </h2>
       </div>
 
       {/* ✅ Carousel Section */}
-      <div className="relative max-w-6xl mx-auto bg-white shadow-sm rounded-md p-6 overflow-hidden">
+      <div className="relative  max-w-6xl mx-auto bg-white shadow-sm rounded-md  overflow-hidden py-1">
         {/* Previous Button */}
         {page > 0 && (
           <div className="absolute left-2 top-1/2 -translate-y-1/2 z-10 flex flex-col items-center space-y-1">
-            <button
+          <button
               onClick={prevPage}
-              className="bg-white shadow-md p-3 rounded-md hover:bg-green-50 border border-gray-200 flex items-center justify-center"
+              className="bg-white shadow-lg p-3 rounded-md hover:bg-green-50 border border-gray-200 flex items-center justify-center cursor-pointer"
             >
-              <ChevronLeft size={25} className="text-green-600" />
+              <ChevronLeft size={25} className="text-green-800" />
+               
             </button>
             <span className="text-[13px] font-medium text-blue-600">Previous</span>
           </div>
         )}
 
         {/* Carousel Items */}
-        <div className="flex justify-center items-center overflow-hidden gap-8">
+        <div className="flex justify-center items-center overflow-hidden gap-10">
           <AnimatePresence custom={direction} mode="wait">
             <motion.div
               key={page}
@@ -115,13 +118,13 @@ const HomeCarousel = () => {
               initial="enter"
               animate="center"
               exit="exit"
-              className="flex justify-center items-center space-x-3"
+              className="flex justify-center items-center space-x-5"
             >
               {visibleItems.map((item, index) => (
                 <div
                   key={index}
                   onClick={() => setActive(index + startIndex)}
-                  className={`flex flex-col  items-center justify-center w-36 h-24 rounded-md cursor-pointer border transition-all duration-200 ${
+                  className={`flex flex-col  items-center justify-center w-36 h-24 rounded-md cursor-pointer  transition-all duration-200 ${
                     active === index + startIndex
                       ? "bg-green-500 text-white border-green-500"
                       : "bg-white hover:bg-green-50 text-gray-700 border-gray-200"
@@ -131,13 +134,13 @@ const HomeCarousel = () => {
                     className={`flex items-center justify-center w-12 h-12 rounded-full mb-2 ${
                       active === index + startIndex
                         ? "bg-white text-green-700"
-                        : "bg-green-50 text-green-500"
+                        : "bg-green-100 text-green-500"
                     }`}
                   >
                     {item.icon}
                   </div>
                   <span
-                    className={`text-sm font-medium text-center ${
+                    className={`text-[15px] font-medium text-center ${
                       active === index + startIndex ? "text-white" : "text-gray-700"
                     }`}
                   >
@@ -156,7 +159,7 @@ const HomeCarousel = () => {
 
             <button
               onClick={nextPage}
-              className="bg-white shadow-lg p-3 rounded-md hover:bg-green-50 border border-gray-200 flex items-center justify-center"
+              className="bg-white shadow-lg p-3 rounded-md hover:bg-green-50 border border-gray-200 flex items-center justify-center cursor-pointer"
             >
               <ChevronRight size={25} className="text-green-800" />
                

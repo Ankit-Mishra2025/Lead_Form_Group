@@ -9,12 +9,23 @@ import Footer from "./Components/Footer";
 
 import AutoSellValuation from "./LoanForms/forms/components/AutoSellForm/AutoSellValuation";
 import BikeValuationLoan from "./LoanForms/forms/components/BikeSellLoanForm/BikeValuationLoan";
+import HomePageWorkBanner from "./LoanPagesBanners/HomePageWorkBanner";
+import HomePageChhoseReason from "./LoanPagesBanners/HomePageChhoseReason";
+import HomePageTrust from "./LoanPagesBanners/HomePageTrust";
+import FinanceSlider from "./SliderData/FinanceSlider";
+// import FinanceBlogPage from "./LoanPagesBanners/FinanceBlogPage";
 
 // 🧩 Common layout for pages that should show Nav + Home
 const MainLayout = () => (
   <div className="w-full min-h-screen bg-gray-100">
     <Nav />
     <Home />
+     <HomePageTrust/>
+    <HomePageChhoseReason/>
+   
+    <HomePageWorkBanner/>
+    <FinanceSlider/>
+    {/* <FinanceBlogPage/> */}
     <Footer />
   </div>
 );
@@ -23,15 +34,7 @@ const App = () => {
   return (
     <Routes>
       {/* 👇 Normal routes (Nav + Home visible) */}
-      <Route
-        path="/loan/personal"
-        element={
-          <div className="w-full min-h-screen bg-sky-50">
-            <Nav />
-            <PersonalLoanBanner />
-          </div>
-        }
-      />
+      
 
       {/* 👇 Only the form page (NO Nav, NO Home, only form) */}
       <Route path="/forms/loanType" element={<LoanTypesRouting />} />

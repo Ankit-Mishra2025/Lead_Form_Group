@@ -35,8 +35,8 @@ const PersonalLoanBanner = () => {
           </div>
 
           <img
-            src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL3N0YXJ0dXBpbWFnZXNfcGhvdG9fb2ZfYWZmcmljYW5fYW1lcmljYW5fYnVzaW5lc3NtYW5fbWFraW5nX2FuX18wNjZmMjUwZi0yZjk2LTQ5ZmUtYmJlMy01NjJiMWNmYzM1OWEucG5n.png"
-            className="h-[380px] w-[400px] ml-5 rounded-md object-cover"
+            src="https://www.lendingtree.com/content/themes/lt-wp-www-theme/assets/images/home-page/personal-loan-bullseye.webp"
+            className="h-[380px] w-[400px] ml-5 rounded-xl object-cover"
             alt="Happy person"
           />
         </div>

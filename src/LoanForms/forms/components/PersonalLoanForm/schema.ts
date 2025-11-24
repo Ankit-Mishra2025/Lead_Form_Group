@@ -59,13 +59,17 @@ export const personalLoanSchema = z.object({
         const age = differenceInYears(new Date(), date);
         if (age < 18) return false;
 
+        
+
+
+
         // Month & Day validation
         const month = date.getMonth() + 1; // 0-based
         const day = date.getDate();
         if (month > 12 || day > 31) return false;
 
         return true;
-      }, "You must be at least 18 years old and select a valid date")
+      }, "You must be at least 18 years old ")
   ),
 
   email: z

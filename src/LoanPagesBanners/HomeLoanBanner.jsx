@@ -40,8 +40,8 @@ const HomeLoanBanner = () => {
           </div>
 
           <img
-            src={HomeLoanMan}
-            className="h-[380px] w-[400px] ml-5 rounded-md"
+            src="https://www.lendingtree.com/content/themes/lt-wp-www-theme/assets/images/home-page/home-equity-bullseye.webp"
+            className="h-[300px] w-[400px] ml-5 rounded-md"
           />
         </div>
       </div>

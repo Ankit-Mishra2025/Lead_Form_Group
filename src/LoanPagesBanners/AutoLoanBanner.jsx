@@ -41,7 +41,7 @@ const AutoLoanBanner = () => {
           </div>
 
           <img
-            src={AutoLoanMan}
+            src="https://www.lendingtree.com/content/themes/lt-wp-www-theme/assets/images/home-page/auto-loan-bullseye.webp"
             className="h-[380px] w-[400px] ml-5 rounded-md"
           />
         </div>

@@ -3,10 +3,11 @@
 import React, { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "react-router-dom";
 import {formRegistry} from '../FormsRegistery/formRegistry.js'
+import { Loader2 } from "lucide-react";
 
 const Loader = () => (
   <div className="flex justify-center items-center min-h-screen">
-    Data Loading...
+    <Loader2 size={"50px"} className="text-green-500 animate-spin"/>
   </div>
 );
 

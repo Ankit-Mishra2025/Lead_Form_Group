@@ -106,7 +106,7 @@ lastName: z
         if (month > 12 || day > 31) return false;
 
         return true;
-      }, "You must be at least 18 years old and select a valid date")
+      }, "You must be at least 18 years old")
   ),
 
   loanPurpose: z.string().min(1, "Loan purpose is required"),

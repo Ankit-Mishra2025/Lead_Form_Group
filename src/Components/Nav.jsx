@@ -31,8 +31,8 @@ const Nav = () => {
   const selectStyle = {
     fontSize: "0.9rem",
     fontWeight: 700,
-    color: "#444",
-    width: "120px",
+    color: "white",
+    width: "100px",
     height: "36px", // fixed height
     display: "flex",
     alignItems: "center",
@@ -41,7 +41,7 @@ const Nav = () => {
       display: "flex",
       alignItems: "center",
     },
-    "& .MuiSelect-icon": { color: "#2e7d32" },
+    "& .MuiSelect-icon": { color: "white" },
     "& .MuiOutlinedInput-notchedOutline": { border: "none" },
   };
 
@@ -73,10 +73,10 @@ const Nav = () => {
     <div className="relative">
       {/* ---------- Navbar ---------- */}
       <div
-        className={`fixed top-0 left-0 w-full h-16 min-h-16 px-6 flex items-center justify-between z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 w-full h-14 min-h-16 px-6 flex items-center justify-between z-50 transition-all duration-500 ${
           isScrolled
-            ? "backdrop-blur-md bg-slate-100/80 shadow-lg"
-            : "bg-slate-100 shadow-md"
+            ? "backdrop-blur-md bg-[#05081c] shadow-lg"
+            : "bg-[#05081c] shadow-md"
         }`}
       >
         {/* ---------- Left: Logo ---------- */}
@@ -86,7 +86,7 @@ const Nav = () => {
             alt="LeadTree Logo"
             className="h-10 w-10 rounded-full object-cover"
           />
-          <h1 className="text-green-600 font-semibold text-[18px]">
+          <h1 className="text-white font-semibold text-[18px]">
             LeadTree Group
           </h1>
         </div>
@@ -161,14 +161,14 @@ const Nav = () => {
 
         {/* ---------- Right: Buttons ---------- */}
         <div className="flex items-center gap-3">
-          <button className="px-5 py-1.5 text-green-600 border border-green-600 rounded-3xl hover:bg-green-50 transition">
+          <button className="px-5 py-1.5 text-white border border-white rounded-3xl hover:bg-green-500 transition font-semibold cursor-pointer">
             Sign In
           </button>
-          <button className="px-5 py-1.5 bg-green-600 text-white rounded-3xl hover:bg-green-700 transition">
+          <button className="px-5 py-1.5 bg-green-600 text-white font-semibold rounded-3xl hover:bg-black hover: border-white transition cursor-pointer">
             Sign Up
           </button>
           <IconButton onClick={() => setShowSearch(true)}>
-            <Search className="text-green-700" />
+            <Search className="text-white" />
           </IconButton>
         </div>
       </div>

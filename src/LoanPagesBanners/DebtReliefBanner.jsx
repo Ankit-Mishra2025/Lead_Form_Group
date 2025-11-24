@@ -40,7 +40,7 @@ const DebtReliefBanner = () => {
           </div>
 
           <img
-            src={DebtLoanMan}
+            src="https://www.lendingtree.com/content/themes/lt-wp-www-theme/assets/images/home-page/debt-relief-bullseye.webp"
             className="h-[380px] w-[400px] ml-5 rounded-md"
           />
         </div>
