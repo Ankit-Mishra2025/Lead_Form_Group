@@ -170,7 +170,7 @@ export default function HomeLoan() {
               )}
             />
            {(errors as any)[name] && (
-              <span className="text-red-500 text-sm md:text-base mt-1">
+              <span className="text-red-500 text-sm md:text-base mt-1 text-center">
                 {(errors as any)[name]?.message}
               </span>
             )}
@@ -317,6 +317,7 @@ export default function HomeLoan() {
               {field.label}
             </label>
 
+
             <Controller
               name={name}
               control={control}
@@ -414,7 +415,7 @@ export default function HomeLoan() {
             />
 
             {(errors as any)[name] && (
-              <span className="text-red-500 text-sm md:text-base mt-1">
+              <span className="text-red-500 text-sm md:text-base mt-1 text-center">
                 {(errors as any)[name]?.message}
               </span>
             )}

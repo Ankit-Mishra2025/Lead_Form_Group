@@ -454,7 +454,7 @@ export default function DebtReliefForm() {
 
               {/* Error message */}
               {(errors as any)[name] && (
-                <span className="text-red-500 text-sm md:text-base mt-1">
+                <span className="text-red-500 text-sm md:text-base mt-1 text-center">
                   {(errors as any)[name]?.message}
                 </span>
               )}

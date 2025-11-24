@@ -37,12 +37,12 @@ export default function AutoLoanForm() {
     : {
         autoLoanType: "",
         loanPaidTime: "",
-       loanamountTime: "",
+        loanamountTime: "",
         AnnualIncome: "",
         firstName: "",
         lastName: "",
-         phone: "",
-       EmploymentStatus: "",
+        phone: "",
+        EmploymentStatus: "",
         Email: "",
         dob: null,
         loanPurpose: "",
@@ -52,9 +52,6 @@ export default function AutoLoanForm() {
         AutoModalAndYear: "",
         AutoMilage: "",
       };
-
-
-
 
   const {
     control,
@@ -68,15 +65,11 @@ export default function AutoLoanForm() {
     defaultValues,
   });
 
-
   const allValues = watch();
   // -- Persist form data to localStorage ---
   useEffect(() => {
     localStorage.setItem("AutoLoanFormData", JSON.stringify(allValues));
   }, [allValues]);
-
-
-
 
   useEffect(() => {
     let mounted = true;
@@ -116,11 +109,6 @@ export default function AutoLoanForm() {
     toast.error("❌ Please fill all required fields correctly!");
   };
 
- 
-
-
-
-
   const nextStep = async () => {
     const currentFields = steps
       .filter((_, idx) => idx === currentStep)
@@ -154,7 +142,7 @@ export default function AutoLoanForm() {
       case "email":
         return (
           <div key={name} className="flex flex-col mb-6">
-             <label className="mb-3 text-[28px] sm:text-[25px] md:text-4xl  text-center font-semibold text-black leading-snug w-[220px]  md:w-full">
+            <label className="mb-3 text-[28px] sm:text-[25px] md:text-4xl  text-center font-semibold text-black leading-snug w-[220px]  md:w-full">
               {field.label}
             </label>
 
@@ -171,10 +159,10 @@ export default function AutoLoanForm() {
               )}
             />
             {(errors as any)[name] && (
-                <span className="text-red-500 text-sm md:text-base mt-1">
-                  {(errors as any)[name]?.message}
-                </span>
-              )}
+              <span className="text-red-500 text-sm md:text-base mt-1">
+                {(errors as any)[name]?.message}
+              </span>
+            )}
           </div>
         );
 
@@ -184,7 +172,7 @@ export default function AutoLoanForm() {
             key={name}
             className="flex flex-col mb-8 relative w-full max-w-[600px] mx-auto px-3 sm:px-4"
           >
-             <label className="mb-3 text-[28px] sm:text-[25px] md:text-4xl  text-center font-semibold text-black leading-snug w-[220px]  md:w-full">
+            <label className="mb-3 text-[28px] sm:text-[25px] md:text-4xl  text-center font-semibold text-black leading-snug w-[220px]  md:w-full">
               {field.label}
             </label>
 
@@ -345,7 +333,9 @@ export default function AutoLoanForm() {
                     type="text"
                     readOnly
                     className={`${inputClass} mt-3 bg-gray-50`}
-                    value={`₹ ${((rhfField.value || 0) / 100000).toFixed(1)} Lakh`}
+                    value={`₹ ${((rhfField.value || 0) / 100000).toFixed(
+                      1
+                    )} Lakh`}
                   />
                 </>
               )}
@@ -356,7 +346,7 @@ export default function AutoLoanForm() {
       case "select":
         return (
           <div key={name} className="flex flex-col mb-8 gap-5">
-             <label className="mb-3 text-[28px] sm:text-[25px] md:text-4xl   font-semibold text-black leading-snug w-[230px]  md:w-full text-center">
+            <label className="mb-3 text-[28px] sm:text-[25px] md:text-4xl   font-semibold text-black leading-snug w-[230px]  md:w-full text-center">
               {field.label}
             </label>
 
@@ -446,11 +436,11 @@ export default function AutoLoanForm() {
               }
             />
 
-             {(errors as any)[name] && (
-                <span className="text-red-500 text-sm md:text-base mt-1 text-center">
-                  {(errors as any)[name]?.message}
-                </span>
-              )}
+            {(errors as any)[name] && (
+              <span className="text-red-500 text-sm md:text-base mt-1 text-center">
+                {(errors as any)[name]?.message}
+              </span>
+            )}
           </div>
         );
 
@@ -508,7 +498,6 @@ export default function AutoLoanForm() {
               style={{ width: `${progress}%` }}
             />
           </div>
-
 
           <form onSubmit={handleSubmit(onSubmit, onError)}>
             <div className="flex justify-center items-center mb-5">
