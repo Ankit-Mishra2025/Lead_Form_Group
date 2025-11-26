@@ -158,7 +158,7 @@ const AutoSellValuation = () => {
       <img
         src={BackgroundImage}
         alt="Background"
-        className="absolute inset-0 w-full min-h-screen object-cover object-top opacity-100"
+        className="absolute inset-0 w-full min-h-screen object-cover object-top opacity-35 "
       />
 
       <form
@@ -264,7 +264,7 @@ const AutoSellValuation = () => {
                           handleSelect("brand", brand.name);
                           handleNext();
                         }}
-                        className={`flex flex-col items-center justify-center bg-slate-100 shadow-md rounded-md cursor-pointer transition-all ${
+                        className={`flex flex-col items-center justify-center bg-slate-50 shadow-sm rounded-md cursor-pointer transition-all ${
                           selected.brand === brand.name
                             ? "border-green-500 shadow-md"
                             : "border-gray-300"
@@ -273,7 +273,7 @@ const AutoSellValuation = () => {
                         <img
                           src={brand.img}
                           alt={brand.name}
-                          className="rounded-full object-contain hover:scale-105 h-12 w-12"
+                          className="rounded-full object-contain hover:scale-105 lg:h-8 w-8 md:h-8 md:w-8 sm:h-12 sm:w-12"
                         />
                         <span className="text-gray-700 text-[12px] font-semibold">
                           {brand.name}
@@ -534,15 +534,38 @@ const AutoSellValuation = () => {
                 exit="exit"
                 className="flex flex-col items-center justify-center w-full mt-8"
               >
-                <h2 className="text-lg font-semibold text-gray-800 mb-4">
-                  Ready to Sell?
-                </h2>
-                <button
-                  type="submit"
-                  className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300"
-                >
-                  Submit Enquiry
-                </button>
+                <div className="relative bottom-5 flex flex-col  px-10 w-3xl">
+                  <p className="text-gray-800 text-[14px]">One Last step</p>
+                  <p className="text-gray-800 font-semibold mt-3 text-[18px]">
+                    Enter Your mobile number to see your car Valuation
+                  </p>
+                  <div className="flex w-full  items-center gap-5 mt-5">
+                    <input
+                      type="text"
+                      placeholder="Mobile number"
+                      className="px-3 py-3 focus:outline-none focus:border border-gray-300 rounded-lg focus:ring-1 ring-green-500 w-full border placeholder:text-[14px] "
+                    />
+                    <button
+                      type="submit"
+                      className="bg-green-500 hover:bg-green-600 text-white font-semibold  py-3 rounded-lg transition-all duration-300 w-70 text-[18px] cursor-pointer"
+                    >
+                      Get Otp
+                    </button>
+                  </div>
+                </div>
+                <p className="text-xs font-semibold text-gray-600 mb-4">
+                  Don't worry we will not span you.  :)
+                </p>
+
+                <div className="flex w-full gap-2 items-center justify-center mt-10 ">
+<input type="checkbox" className="h-5 w-5 rounded-md cursor-pointer"/>
+<p className="font-bold text-[14px]">Receive updates on whatshap</p>
+
+                </div>
+                <div>
+<p className="text-[12px] mt-5 text-gray-600">By logging in, I agree <span className="text-green-700">terms</span> and <span className="text-green-700">policy</span></p>
+                </div>
+              
               </motion.div>
             )}
           </AnimatePresence>

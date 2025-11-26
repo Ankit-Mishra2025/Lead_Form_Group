@@ -23,6 +23,7 @@ import BusinessLoanBanner from "../LoanPagesBanners/BusinessLoanBanner";
 import AutoLoanBanner from "../LoanPagesBanners/AutoLoanBanner";
 import DebtReliefBanner from "../LoanPagesBanners/DebtReliefBanner";
 import VehicleBanner from "../LoanPagesBanners/VehicleBanner";
+import CreditLoanBanner from "../LoanPagesBanners/CreditLoanBanner";
 
 const HomeCarousel = () => {
   const [active, setActive] = useState(0);
@@ -31,20 +32,44 @@ const HomeCarousel = () => {
   const itemsPerPage = 6;
 
   const allItems = [
-    { name: "Personal Loans", icon: <DollarSign size={24} />, banner: <PersonalLoanBanner /> },
-    { name: "Home Loans", icon: <House size={24} />, banner: <HomeLoanBanner /> },
-    { name: "Home Purchase", icon: <HouseHeartIcon size={24} />, banner: <HomePurchaseLoanBanner /> },
-    { name: "Insurance", icon: <Shield size={24} />, },
-    { name: "Business Loan", icon: <Briefcase size={24} />, banner: <BusinessLoanBanner/>  },
-    { name: "Credit Score", icon: <TrendingUp size={24} />, },
-    { name: "Auto Loan", icon: <Car size={24} />, banner: <AutoLoanBanner /> },
-    { name: "Debt Relief", icon: <DollarSign size={24} />, banner: <DebtReliefBanner/>},
-
     {
-      name:"Vehicle Loan",icon:<Car size={24} />, banner: <VehicleBanner/>
+      name: "Personal Loans",
+      icon: <DollarSign size={24} />,
+      banner: <PersonalLoanBanner />,
+    },
+    {
+      name: "Home Loans",
+      icon: <House size={24} />,
+      banner: <HomeLoanBanner />,
+    },
+    {
+      name: "Home Purchase",
+      icon: <HouseHeartIcon size={24} />,
+      banner: <HomePurchaseLoanBanner />,
+    },
+    { name: "Insurance", icon: <Shield size={24} /> },
+    {
+      name: "Business Loan",
+      icon: <Briefcase size={24} />,
+      banner: <BusinessLoanBanner />,
+    },
+    {
+      name: "Credit Card",
+      icon: <TrendingUp size={24} />,
+      banner: <CreditLoanBanner />,
+    },
+    { name: "Auto Loan", icon: <Car size={24} />, banner: <AutoLoanBanner /> },
+    {
+      name: "Debt Relief",
+      icon: <DollarSign size={24} />,
+      banner: <DebtReliefBanner />,
     },
 
-
+    {
+      name: "Vehicle Loan",
+      icon: <Car size={24} />,
+      banner: <VehicleBanner />,
+    },
   ];
 
   const startIndex = page * itemsPerPage;
@@ -87,8 +112,7 @@ const HomeCarousel = () => {
       {/* ✅ Heading */}
       <div className="text-center mt-12 mb-8 py-5">
         <h2 className="font-bold text-[40px] text-gray-800 mt-5">
-          When banks compete,{" "}
-          <span className="text-green-600">you win.</span>
+          When banks compete, <span className="text-green-600">you win.</span>
         </h2>
       </div>
 
@@ -97,14 +121,15 @@ const HomeCarousel = () => {
         {/* Previous Button */}
         {page > 0 && (
           <div className="absolute left-2 top-1/2 -translate-y-1/2 z-10 flex flex-col items-center space-y-1">
-          <button
+            <button
               onClick={prevPage}
               className="bg-white shadow-lg p-3 rounded-md hover:bg-green-50 border border-gray-200 flex items-center justify-center cursor-pointer"
             >
               <ChevronLeft size={25} className="text-green-800" />
-               
             </button>
-            <span className="text-[13px] font-medium text-blue-600">Previous</span>
+            <span className="text-[13px] font-medium text-blue-600">
+              Previous
+            </span>
           </div>
         )}
 
@@ -141,7 +166,9 @@ const HomeCarousel = () => {
                   </div>
                   <span
                     className={`text-[15px] font-medium text-center ${
-                      active === index + startIndex ? "text-white" : "text-gray-700"
+                      active === index + startIndex
+                        ? "text-white"
+                        : "text-gray-700"
                     }`}
                   >
                     {item.name}
@@ -155,16 +182,15 @@ const HomeCarousel = () => {
         {/* Next Button */}
         {startIndex + itemsPerPage < allItems.length && (
           <div className="absolute right-2 top-1/2 -translate-y-1/2 z-10 flex flex-col items-center space-y-1 ">
-
-
             <button
               onClick={nextPage}
               className="bg-white shadow-lg p-3 rounded-md hover:bg-green-50 border border-gray-200 flex items-center justify-center cursor-pointer"
             >
               <ChevronRight size={25} className="text-green-800" />
-               
             </button>
-            <span className="text-[13px] font-medium text-blue-600">More Options</span>
+            <span className="text-[13px] font-medium text-blue-600">
+              More Options
+            </span>
           </div>
         )}
       </div>

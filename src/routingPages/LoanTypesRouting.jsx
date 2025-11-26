@@ -4,6 +4,8 @@ import React, { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "react-router-dom";
 import {formRegistry} from '../FormsRegistery/formRegistry.js'
 import { Loader2 } from "lucide-react";
+import CreditCardNavbar from "../Components/CreditCardNavbar.jsx";
+import CreditCardFooter from "../Components/CreditCardFooter.jsx";
 
 const Loader = () => (
   <div className="flex justify-center items-center min-h-screen">
@@ -58,6 +60,10 @@ const LoanTypesRouting = () => {
 
   return (
     <div className="min-h-screen bg-white p-8">
+
+ {loanType === "creditCard" && <CreditCardNavbar />}
+
+
       {loading ? (
         <Loader />
       ) : FormComponent ? (
@@ -67,6 +73,7 @@ const LoanTypesRouting = () => {
       ) : (
         <NotFound loanType={loanType} />
       )}
+       {loanType === "creditCard" && <CreditCardFooter/>}
     </div>
   );
 };

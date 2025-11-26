@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
-import { FinanceData } from "./FinanceSlideData/FinanceData.js";
+import { FinanceData } from "../../public/FinanceSlideImageData/FinanceData.js";
 
 const FinanceSlider = () => {
   return (

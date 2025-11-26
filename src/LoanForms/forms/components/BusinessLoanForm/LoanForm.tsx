@@ -379,7 +379,7 @@ export default function BusinessLoanForm() {
               {/* Error message */}
 
               {(errors as any)[name] && (
-                <span className="text-red-500 text-sm md:text-base mt-1 text-center">
+                <span className="text-red-500 text-sm md:text-base mt-1 text-center font-semibold">
                   {(errors as any)[name]?.message}
                 </span>
               )}

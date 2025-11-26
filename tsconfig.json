@@ -29,6 +29,6 @@
     /* ✅ Misc */
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src"],
+  "include": ["src", "public/FinanceSlideImageData"],
   "exclude": ["node_modules", "dist"]
 }

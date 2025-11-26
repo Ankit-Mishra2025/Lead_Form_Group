@@ -77,7 +77,7 @@ export const AutoLoan = z.object({
   EmploymentStatus: z.string().min(1, "Employment status is required"),
 
    AutoMilage: z.string().min(1, "Mileage is required"),
-   previousLoan: z.string().min(1, "This field is required"),
+   previousLoan: z.string().min(1, "Select any one"),
 
   Email: z
     .string()

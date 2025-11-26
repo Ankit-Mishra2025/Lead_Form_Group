@@ -21,4 +21,9 @@ export const formRegistry = {
 
   businessLoan: () =>
     import("../LoanForms/forms/components/BusinessLoanForm/LoanForm.tsx"),
+
+  creditCard: () =>
+    import(
+      "../LoanForms/forms/components/CreditCardForm/CreditCardFormPage.jsx"
+    ),
 };
