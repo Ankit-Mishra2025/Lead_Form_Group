@@ -17,12 +17,14 @@ import {
   Wallet,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import AmericanExpress from "../../../../assets/CrediCardImages/AmericanAtmCard.avif";
-import BankOfAmerica from "../../../../assets/CrediCardImages/BankOfAmerica.jpg";
-import CityBank from "../../../../assets/CrediCardImages/CityBankAtm.png";
-import WeelsFargo from "../../../../assets/CrediCardImages/WelsFargo.jpg";
-import CapitalOne from "../../../../assets/CrediCardImages/CapitalOne.jpg";
-import Chasesphere from "../../../../assets/CrediCardImages/ChassSphere.jpg";
+import AmericanExpress from "/CrediCardImages/AmericanAtmCard.avif";
+import BankOfAmerica from "/CrediCardImages/BankOfAmerica.jpg";
+import CityBank from "/CrediCardImages/CityBankAtm.png";
+import WeelsFargo from "/CrediCardImages/WelsFargo.jpg";
+import CapitalOne from "/CrediCardImages/CapitalOne.jpg";
+import Chasesphere from "/CrediCardImages/ChassSphere.jpg";
+
+
 
 const CreditCardFormPage = () => {
   const [openBank, setOpenBank] = useState(false);
@@ -223,8 +225,9 @@ const CreditCardFormPage = () => {
 
               {/* Accordion Body */}
               <div
-                className={`overflow-hidden transition-all duration-700 ${openBank ? "max-h-[500px] mt-4" : "max-h-0"
-                  }`}
+                className={`overflow-hidden transition-all duration-700 ${
+                  openBank ? "max-h-[500px] mt-4" : "max-h-0"
+                }`}
               >
                 <div className="rounded-md p-4 shadow-sm ">
                   {bankData.map((item, index) => (
@@ -258,8 +261,9 @@ const CreditCardFormPage = () => {
 
               {/* Accordion Body */}
               <div
-                className={`overflow-hidden transition-all duration-700 ${openCreditCard ? "max-h-[500px] mt-4" : "max-h-0"
-                  }`}
+                className={`overflow-hidden transition-all duration-700 ${
+                  openCreditCard ? "max-h-[500px] mt-4" : "max-h-0"
+                }`}
               >
                 <div className="rounded-md  shadow-sm">
                   {creditCardData.map((item, index) => (
@@ -401,8 +405,9 @@ const CreditCardFormPage = () => {
 
               {/* Accordion Body */}
               <div
-                className={`overflow-hidden transition-all duration-700 ${openBank ? "max-h-[500px] mt-4" : "max-h-0"
-                  }`}
+                className={`overflow-hidden transition-all duration-700 ${
+                  openBank ? "max-h-[500px] mt-4" : "max-h-0"
+                }`}
               >
                 <div className="rounded-md p-2 shadow-sm ">
                   {bankData.map((item, index) => (
@@ -435,8 +440,9 @@ const CreditCardFormPage = () => {
 
               {/* Accordion Body */}
               <div
-                className={`overflow-hidden transition-all duration-700 ${openCreditCard ? "max-h-[500px] mt-4" : "max-h-0"
-                  }`}
+                className={`overflow-hidden transition-all duration-700 ${
+                  openCreditCard ? "max-h-[500px] mt-4" : "max-h-0"
+                }`}
               >
                 <div className="rounded-md p-2 shadow-sm ">
                   {creditCardData.map((item, index) => (
@@ -471,15 +477,15 @@ const CreditCardFormPage = () => {
             </div>
           </div>
 
-         <div className=" w-30   font-medium text-[20px] ">
-                <div className="flex flex-row left-60 bottom-10 relative  ">
-                  <Star className="text-yellow-400" />{" "}
-                  <Star className="text-yellow-400" />{" "}
-                  <Star className="text-yellow-400" />{" "}
-                  <Star className="text-yellow-400" />{" "}
-                  <Star className="text-yellow-400" />
-                </div>
-              </div>
+          <div className=" w-30   font-medium text-[20px] ">
+            <div className="flex flex-row left-60 bottom-10 relative  ">
+              <Star className="text-yellow-400" />{" "}
+              <Star className="text-yellow-400" />{" "}
+              <Star className="text-yellow-400" />{" "}
+              <Star className="text-yellow-400" />{" "}
+              <Star className="text-yellow-400" />
+            </div>
+          </div>
 
           <div className="flex w-full items-center gap-2 text-gray-600 text-sm px-5">
             {" "}
@@ -575,8 +581,9 @@ const CreditCardFormPage = () => {
 
               {/* Accordion Body */}
               <div
-                className={`overflow-hidden transition-all duration-700 ${openBank ? "max-h-[500px] mt-4" : "max-h-0"
-                  }`}
+                className={`overflow-hidden transition-all duration-700 ${
+                  openBank ? "max-h-[500px] mt-4" : "max-h-0"
+                }`}
               >
                 <div className="rounded-md p-2 shadow-sm ">
                   {bankData.map((item, index) => (
@@ -609,8 +616,9 @@ const CreditCardFormPage = () => {
 
               {/* Accordion Body */}
               <div
-                className={`overflow-hidden transition-all duration-700 ${openCreditCard ? "max-h-[500px] mt-4" : "max-h-0"
-                  }`}
+                className={`overflow-hidden transition-all duration-700 ${
+                  openCreditCard ? "max-h-[500px] mt-4" : "max-h-0"
+                }`}
               >
                 <div className="rounded-md p-2 shadow-sm ">
                   {creditCardData.map((item, index) => (
@@ -645,17 +653,15 @@ const CreditCardFormPage = () => {
             </div>
           </div>
 
-
-
-<div className=" w-30  font-medium text-[20px] ">
-                <div className="flex flex-row left-60 bottom-20 relative  ">
-                  <Star className="text-yellow-400" />{" "}
-                  <Star className="text-yellow-400" />{" "}
-                  <Star className="text-yellow-400" />{" "}
-                  <Star className="text-yellow-400" />{" "}
-                  <Star className="text-gray-700" />
-                </div>
-              </div>
+          <div className=" w-30  font-medium text-[20px] ">
+            <div className="flex flex-row left-60 bottom-20 relative  ">
+              <Star className="text-yellow-400" />{" "}
+              <Star className="text-yellow-400" />{" "}
+              <Star className="text-yellow-400" />{" "}
+              <Star className="text-yellow-400" />{" "}
+              <Star className="text-gray-700" />
+            </div>
+          </div>
           <div className="flex w-full items-center gap-3 text-gray-600 text-sm p-5">
             {" "}
             <input type="checkbox" className="h-5 w-5 rounded-xl " /> Add to
@@ -756,8 +762,9 @@ const CreditCardFormPage = () => {
 
               {/* Accordion Body */}
               <div
-                className={`overflow-hidden transition-all duration-700 ${openBank ? "max-h-[500px] mt-4" : "max-h-0"
-                  }`}
+                className={`overflow-hidden transition-all duration-700 ${
+                  openBank ? "max-h-[500px] mt-4" : "max-h-0"
+                }`}
               >
                 <div className="rounded-md p-2 shadow-sm ">
                   {bankData.map((item, index) => (
@@ -790,8 +797,9 @@ const CreditCardFormPage = () => {
 
               {/* Accordion Body */}
               <div
-                className={`overflow-hidden transition-all duration-700 ${openCreditCard ? "max-h-[500px] mt-4" : "max-h-0"
-                  }`}
+                className={`overflow-hidden transition-all duration-700 ${
+                  openCreditCard ? "max-h-[500px] mt-4" : "max-h-0"
+                }`}
               >
                 <div className="rounded-md p-2 shadow-sm ">
                   {creditCardData.map((item, index) => (
@@ -827,16 +835,15 @@ const CreditCardFormPage = () => {
             </div>
           </div>
 
-<div className=" w-30  font-medium text-[20px] ">
-                <div className="flex flex-row left-60 bottom-35 relative  ">
-                  <Star className="text-yellow-400" />{" "}
-                  <Star className="text-yellow-400" />{" "}
-                  <Star className="text-yellow-400" />{" "}
-                  <Star className="text-gray-700" />{" "}
-                  <Star className="text-gray-700" />
-                </div>
-              </div>
-
+          <div className=" w-30  font-medium text-[20px] ">
+            <div className="flex flex-row left-60 bottom-35 relative  ">
+              <Star className="text-yellow-400" />{" "}
+              <Star className="text-yellow-400" />{" "}
+              <Star className="text-yellow-400" />{" "}
+              <Star className="text-gray-700" />{" "}
+              <Star className="text-gray-700" />
+            </div>
+          </div>
 
           <div className="flex w-full items-center gap-3 text-gray-600 text-sm p-5">
             {" "}
@@ -937,8 +944,9 @@ const CreditCardFormPage = () => {
 
               {/* Accordion Body */}
               <div
-                className={`overflow-hidden transition-all duration-700 ${openBank ? "max-h-[500px] mt-4" : "max-h-0"
-                  }`}
+                className={`overflow-hidden transition-all duration-700 ${
+                  openBank ? "max-h-[500px] mt-4" : "max-h-0"
+                }`}
               >
                 <div className="rounded-md p-2 shadow-sm ">
                   {bankData.map((item, index) => (
@@ -972,8 +980,9 @@ const CreditCardFormPage = () => {
 
               {/* Accordion Body */}
               <div
-                className={`overflow-hidden transition-all duration-700 ${openCreditCard ? "max-h-[500px] mt-4" : "max-h-0"
-                  }`}
+                className={`overflow-hidden transition-all duration-700 ${
+                  openCreditCard ? "max-h-[500px] mt-4" : "max-h-0"
+                }`}
               >
                 <div className="rounded-md p-2 shadow-sm ">
                   {creditCardData.map((item, index) => (
@@ -1009,17 +1018,15 @@ const CreditCardFormPage = () => {
             </div>
           </div>
 
-
-<div className=" w-30  font-medium text-[20px] ">
-                <div className="flex flex-row left-65 bottom-25 relative  ">
-                  <Star className="text-yellow-400" />{" "}
-                  <Star className="text-yellow-400" />{" "}
-                  <Star className="text-yellow-400" />{" "}
-                  <Star className="text-gray-700" />{" "}
-                  <Star className="text-gray-700" />
-                </div>
-              </div>
-
+          <div className=" w-30  font-medium text-[20px] ">
+            <div className="flex flex-row left-65 bottom-25 relative  ">
+              <Star className="text-yellow-400" />{" "}
+              <Star className="text-yellow-400" />{" "}
+              <Star className="text-yellow-400" />{" "}
+              <Star className="text-gray-700" />{" "}
+              <Star className="text-gray-700" />
+            </div>
+          </div>
 
           <div className="flex w-full items-center gap-3 text-gray-600 text-sm px-5 py-2">
             {" "}
@@ -1120,8 +1127,9 @@ const CreditCardFormPage = () => {
 
               {/* Accordion Body */}
               <div
-                className={`overflow-hidden transition-all duration-700 ${openBank ? "max-h-[500px] mt-4" : "max-h-0"
-                  }`}
+                className={`overflow-hidden transition-all duration-700 ${
+                  openBank ? "max-h-[500px] mt-4" : "max-h-0"
+                }`}
               >
                 <div className="rounded-md p-2 shadow-sm ">
                   {bankData.map((item, index) => (
@@ -1155,8 +1163,9 @@ const CreditCardFormPage = () => {
 
               {/* Accordion Body */}
               <div
-                className={`overflow-hidden transition-all duration-700 ${openCreditCard ? "max-h-[500px] mt-4" : "max-h-0"
-                  }`}
+                className={`overflow-hidden transition-all duration-700 ${
+                  openCreditCard ? "max-h-[500px] mt-4" : "max-h-0"
+                }`}
               >
                 <div className="rounded-md p-2 shadow-sm ">
                   {creditCardData.map((item, index) => (
@@ -1259,19 +1268,17 @@ const CreditCardFormPage = () => {
               </Link>
             </p>
           </div>
-
-          
         </div>
         <div className="flex rounded-md  w-full shadow-sm border border-gray-100 mt-10 p-2">
-            <p className="text-xs text-gray-600">
-              Editorial Note: This content is not provided or commissioned by
-              the credit card issuer. Any opinions, analyses, reviews or
-              recommendations expressed in this article are those of the
-              author’s alone, and may not have been reviewed, approved or
-              otherwise endorsed by the credit card issuer. This site may be
-              compensated through a credit card issuer partnership.
-            </p>
-          </div>
+          <p className="text-xs text-gray-600">
+            Editorial Note: This content is not provided or commissioned by the
+            credit card issuer. Any opinions, analyses, reviews or
+            recommendations expressed in this article are those of the author’s
+            alone, and may not have been reviewed, approved or otherwise
+            endorsed by the credit card issuer. This site may be compensated
+            through a credit card issuer partnership.
+          </p>
+        </div>
       </div>
     </>
   );
