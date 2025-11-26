@@ -38,7 +38,7 @@ const BikeValuationLoan = () => {
         console.error("Error fetching bike data:", err);
       }
     };
-     fetchBikeData();
+    fetchBikeData();
   }, []);
 
   // Animation Variants
@@ -80,29 +80,28 @@ const BikeValuationLoan = () => {
     navigate("/Bike-Valuation");
   };
 
- const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const finalData = {
-    brand: selectedBrand,
-    model: selectedModel,
-    year: selectedYear,
-    fuel: selectedFuel,
-    location: selectedLocation,
-    sellTime: selectedSellTime,
+    const finalData = {
+      brand: selectedBrand,
+      model: selectedModel,
+      year: selectedYear,
+      fuel: selectedFuel,
+      location: selectedLocation,
+      sellTime: selectedSellTime,
+    };
+
+    console.log("✅ Selected Bike data is:", finalData);
+    toast.success("Your Enquiry submitted Successfully");
   };
-
-  console.log("✅ Selected Bike data is:", finalData);
-  toast.success("Your Enquiry submitted Successfully");
-};
-
 
   // ✅ Filtered Data for Models & Locations & Brand
 
- const filterdBrand =
-  sellBikeData?.brands?.filter((brand) =>
-    brand.name.toLowerCase().includes(brandSearch.toLowerCase())
-  ) || [];
+  const filterdBrand =
+    sellBikeData?.brands?.filter((brand) =>
+      brand.name.toLowerCase().includes(brandSearch.toLowerCase())
+    ) || [];
 
   const filteredModels =
     sellBikeData?.brands
@@ -112,7 +111,7 @@ const BikeValuationLoan = () => {
       ) || [];
 
   const filteredLocations =
-   sellBikeData?.locations?.filter((loc) =>
+    sellBikeData?.locations?.filter((loc) =>
       loc.toLowerCase().includes(locationSearch.toLowerCase())
     ) || [];
 
@@ -205,9 +204,10 @@ const BikeValuationLoan = () => {
           </button>
         )}
 
-<p className="float-right relative left-80 font-semibold"> Step:{step+0}</p>
-
-
+        <p className="float-right relative left-80 font-semibold">
+          {" "}
+          Step:{step + 0}
+        </p>
 
         {/* Steps */}
         <div className="relative w-full min-h-[360px]">
@@ -224,10 +224,11 @@ const BikeValuationLoan = () => {
                 className="w-full"
               >
                 <h2 className="text-[16px] sm:text-[17px] font-semibold mb-4 text-gray-800">
-                 Select the <span className="font-semibold">brand </span> of your Bike
+                  Select the <span className="font-semibold">brand </span> of
+                  your Bike
                 </h2>
 
-<div className="relative w-full mb-4">
+                <div className="relative w-full mb-4">
                   <input
                     type="text"
                     placeholder="Search your brand..."
@@ -241,34 +242,34 @@ const BikeValuationLoan = () => {
                   />
                 </div>
 
-               
-
                 <div className="mt-10 w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-2 sm:gap-4 md:gap-5 lg:gap-6">
-                  {filterdBrand.length>0 ?    (filterdBrand.map((brand, i) => (
-                    <div
-                      key={i}
-                      onClick={() => {
-                        setSelectedBrand(brand.name);
-                        handleNext();
-                      }}
-                      className={`flex flex-col items-center justify-center bg-gray-100 rounded-md shadow-sm cursor-pointer transition-all duration-200 ${
-                        selectedBrand === brand.name
-                          ? "border-green-500 shadow-md"
-                          : "border-gray-300"
-                      } px-3 py-3 sm:px-3 sm:py-2 md:px-3 md:py-3 lg:px-3 lg:py-4`}
-                    >
-                      <div className="flex flex-col items-center justify-center">
-                        <img
-                          src={brand.img}
-                          alt={brand.name}
-                          className="rounded-full object-contain transition-transform duration-300 hover:scale-105 lg:h-8 lg:w-8 md:h-8 md:w-8 sm:h-10 sm:w-10 max-[480px]:h-9 max-[480px]:w-9 max-[360px]:h-8 max-[360px]:w-8"
-                        />
-                        <span className="text-gray-900 text-[12px] font-semibold">
-                          {brand.name}
-                        </span>
+                  {filterdBrand.length > 0 ? (
+                    filterdBrand.map((brand, i) => (
+                      <div
+                        key={i}
+                        onClick={() => {
+                          setSelectedBrand(brand.name);
+                          handleNext();
+                        }}
+                        className={`flex flex-col items-center justify-center bg-gray-100 rounded-md shadow-sm cursor-pointer transition-all duration-200 ${
+                          selectedBrand === brand.name
+                            ? "border-green-500 shadow-md"
+                            : "border-gray-300"
+                        } px-3 py-3 sm:px-3 sm:py-2 md:px-3 md:py-3 lg:px-3 lg:py-4`}
+                      >
+                        <div className="flex flex-col items-center justify-center">
+                          <img
+                            src={brand.img}
+                            alt={brand.name}
+                            className="rounded-full object-contain transition-transform duration-300 hover:scale-105 lg:h-8 lg:w-8 md:h-8 md:w-8 sm:h-10 sm:w-10 max-[480px]:h-9 max-[480px]:w-9 max-[360px]:h-8 max-[360px]:w-8"
+                          />
+                          <span className="text-gray-900 text-[12px] font-semibold">
+                            {brand.name}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  ))):(
+                    ))
+                  ) : (
                     <p className="text-center text-gray-500 text-sm col-span-full">
                       No brand found.
                     </p>
@@ -520,7 +521,7 @@ const BikeValuationLoan = () => {
                 exit="exit"
                 className="flex flex-col items-center justify-center w-full mt-8"
               >
-            <div className="relative bottom-5 flex flex-col  px-10 w-3xl">
+                <div className="relative bottom-5 flex flex-col  px-10 w-3xl">
                   <p className="text-gray-800 text-[14px]">One Last step</p>
                   <p className="text-gray-800 font-semibold mt-3 text-[18px]">
                     Enter Your mobile number to see your Bike Valuation
@@ -530,7 +531,7 @@ const BikeValuationLoan = () => {
                       type="text"
                       required
                       maxLength={10}
-                      minLength={11}
+                      minLength={10}
                       placeholder="Mobile number"
                       className="px-3 py-3 focus:outline-none focus:border border-gray-300 rounded-lg focus:ring-1 ring-green-500 w-full border placeholder:text-[14px] "
                     />
@@ -543,16 +544,24 @@ const BikeValuationLoan = () => {
                   </div>
                 </div>
                 <p className="text-xs font-semibold text-gray-600 mb-4">
-                  Don't worry we will not span you.  :)
+                  Don't worry we will not span you. :)
                 </p>
 
                 <div className="flex w-full gap-2 items-center justify-center mt-10 ">
-<input type="checkbox" className="h-5 w-5 rounded-md cursor-pointer"/>
-<p className="font-bold text-[14px]">Receive updates on whatshap</p>
-
+                  <input
+                    type="checkbox"
+                    className="h-5 w-5 rounded-md cursor-pointer"
+                  />
+                  <p className="font-bold text-[14px]">
+                    Receive updates on whatshap
+                  </p>
                 </div>
                 <div>
-<p className="text-[12px] mt-5 text-gray-600">By logging in, I agree <span className="text-green-700">terms</span> and <span className="text-green-700">policy</span></p>
+                  <p className="text-[12px] mt-5 text-gray-600">
+                    By logging in, I agree{" "}
+                    <span className="text-green-700">terms</span> and{" "}
+                    <span className="text-green-700">policy</span>
+                  </p>
                 </div>
               </motion.div>
             )}

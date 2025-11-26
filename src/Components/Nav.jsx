@@ -92,7 +92,8 @@ const Nav = () => {
         </div>
 
         {/* ---------- Center: Dropdowns ---------- */}
-        <div className="flex items-center gap-6">
+
+        {/* <div className="flex items-center gap-6">
           {[
             {
               name: "loan",
@@ -157,7 +158,7 @@ const Nav = () => {
               </Select>
             </FormControl>
           ))}
-        </div>
+        </div> */}
 
         {/* ---------- Right: Buttons ---------- */}
         <div className="flex items-center gap-3">
