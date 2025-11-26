@@ -25,7 +25,7 @@ import toast, { Toaster } from "react-hot-toast";
 export default function PersonalLoanForm() {
   const [steps, setSteps] = useState<any[]>([]);
   const [currentStep, setCurrentStep] = useState<number>(0);
-  const [loading, setLoading] = useState<boolean>(true);
+  // const [loading, setLoading] = useState<boolean>(true);
 
   const storedData =
     typeof window !== "undefined"
@@ -49,8 +49,6 @@ export default function PersonalLoanForm() {
         homeavaliablity: "",
       };
 
-
- 
   const {
     control,
     handleSubmit,
@@ -89,7 +87,7 @@ export default function PersonalLoanForm() {
         console.error("Error loading form data:", err);
         if (mounted) setSteps([]);
       } finally {
-        if (mounted) setLoading(false);
+        // if (mounted) setLoading(false);
       }
     };
     fetchSteps();
@@ -145,7 +143,6 @@ export default function PersonalLoanForm() {
   hover:translate-y-1 hover:scale-103
 `;
 
-
   const renderField = (field: any) => {
     const name = field.name;
 
@@ -185,7 +182,7 @@ export default function PersonalLoanForm() {
       case "phone":
         return (
           <div key={name} className="flex flex-col mb-6 ">
-              <label className="mb-3 text-[28px] sm:text-[25px] md:text-4xl  text-center font-semibold text-black leading-snug w-full">
+            <label className="mb-3 text-[28px] sm:text-[25px] md:text-4xl  text-center font-semibold text-black leading-snug w-full">
               {field.label}
             </label>
 
@@ -310,9 +307,6 @@ export default function PersonalLoanForm() {
             />
           </div>
         );
-
-
-
 
       case "slider":
         return (
@@ -505,15 +499,15 @@ export default function PersonalLoanForm() {
   const progress =
     steps.length > 1 ? (currentStep / (steps.length - 1)) * 100 : 0;
 
-  if (loading)
-    return (
-      <div className="flex flex-col justify-center items-center min-h-screen px-4">
-        <CircularProgress color="success" size={60} />
-        <span className="mt-4 text-lg sm:text-base text-gray-700 text-center">
-          Loading...
-        </span>
-      </div>
-    );
+  // if (loading)
+  //   return (
+  //     <div className="flex flex-col justify-center items-center min-h-screen px-4">
+  //       <CircularProgress color="success" size={60} />
+  //       <span className="mt-4 text-lg sm:text-base text-gray-700 text-center">
+  //         Loading...
+  //       </span>
+  //     </div>
+  //   );
 
   if (!steps || steps.length === 0)
     return (
@@ -653,4 +647,4 @@ export default function PersonalLoanForm() {
       </div>
     </>
   );
-}  
+}

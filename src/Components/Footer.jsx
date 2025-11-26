@@ -5,10 +5,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="w-full bg-blue-900 min-h-screen grid grid-cols-4 px-15 py-5">
+    <div className="w-full bg-blue-950 min-h-screen grid grid-cols-4 px-15 py-5">
       <div className="flex flex-col">
         <h2 className="text-[16px] text-white font-semibold">About Us</h2>
-        <ul className="mt-2 text-[13px] text-slate-200 flex flex-col gap-2">
+        <ul className="mt-2 text-[13px] text-gray-200 flex flex-col gap-2">
           <li>
             <a href="#">About LeadTree</a>
           </li>
