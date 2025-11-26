@@ -24,7 +24,7 @@ import { differenceInYears } from "date-fns";
 export default function AutoLoanForm() {
   const [steps, setSteps] = useState<any[]>([]);
   const [currentStep, setCurrentStep] = useState<number>(0);
-  // const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(true);
 
   // --- Load defaultValues from localStorage ---
   const storedData =
@@ -91,7 +91,7 @@ export default function AutoLoanForm() {
         console.error(err);
         if (mounted) setSteps([]);
       } finally {
-        // if (mounted) setLoading(false);
+        if (mounted) setLoading(false);
       }
     };
     fetchSteps();
@@ -452,15 +452,15 @@ export default function AutoLoanForm() {
   const progress =
     steps.length > 1 ? (currentStep / (steps.length - 1)) * 100 : 0;
 
-  // if (loading)
-  //   return (
-  //     <div className="flex flex-col justify-center items-center min-h-screen px-4">
-  //       <CircularProgress color="success" size={60} />
-  //       <span className="mt-4 text-lg sm:text-base text-gray-700 text-center">
-  //         Loading...
-  //       </span>
-  //     </div>
-  //   );
+  if (loading)
+    return (
+      <div className="flex flex-col justify-center items-center min-h-screen px-4">
+        <CircularProgress color="success" size={60} />
+        <span className="mt-4 text-lg sm:text-base text-gray-700 text-center">
+          Loading...
+        </span>
+      </div>
+    );
 
   return (
     <>
