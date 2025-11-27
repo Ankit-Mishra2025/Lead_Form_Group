@@ -209,7 +209,7 @@ export default function HomeLoan() {
                   {...rhfField}
                   placeholder="Enter 10-digit phone number"
                   maxLength={10}
-                  className={`w-[250px] md:w-full mt-5 border rounded-xl px-3 py-3 sm:px-3 sm:py-4 text-[15px] sm:text-[16px] md:text-[16px]  text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-400 focus:bg-green-50 focus:border-green-200 transition-all `}
+                  className={`w-[250px] md:w-full mt-5 border rounded-md px-3 py-3 sm:px-3 sm:py-3 text-[15px] sm:text-[16px] md:text-[16px]  text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-400 focus:bg-green-50 focus:border-green-200 transition-all `}
                 />
               )}
             />
@@ -392,7 +392,7 @@ export default function HomeLoan() {
                           className={`
                       transition-all duration-300 ease-in-out rounded-2xl md:rounded-xl shadow-sm
                       border cursor-pointer px-2 border-gray-400
-                      flex items-center justify-center text-center font-medium
+                      flex items-center justify-center text-center
                       w-[35vw] max-w-[200px] min-w-[90px]
                       h-[90px] sm:h-[95px] md:h-[70px] min-h-[65px]
                       text-[13px] sm:text-[13px] md:text-[16px]
