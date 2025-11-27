@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useState } from "react";
-import { SilderData } from "../SliderPage/SliderData.jsx";
+import { SilderData } from "../SliderData/SliderData.jsx";
 import { motion } from "framer-motion";
 
 const HomePageChhoseReason = () => {

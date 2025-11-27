@@ -542,6 +542,9 @@ const AutoSellValuation = () => {
                   <div className="flex w-full  items-center gap-5 mt-5">
                     <input
                       type="text"
+                      required
+                      maxLength={10}
+                      minLength={10}
                       placeholder="Mobile number"
                       className="px-3 py-3 focus:outline-none focus:border border-gray-300 rounded-lg focus:ring-1 ring-green-500 w-full border placeholder:text-[14px] "
                     />

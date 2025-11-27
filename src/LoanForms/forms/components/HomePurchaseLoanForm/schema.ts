@@ -82,13 +82,15 @@ export const HomePurchase = z.object({
       const tld = domainParts[domainParts.length - 1]; // get last part
       return allowedTLDs.includes(tld);
     }, "Email must end with a valid domain like .com, .in, .org"),
-  dob: z.preprocess(
+
+
+
+   dob: z.preprocess(
     (val) => {
       if (val instanceof Date && !isNaN(val.getTime())) return val;
       if (typeof val === "string" && val) return new Date(val);
       return undefined;
     },
-    
     z
       .date({
         required_error: "Choose your Date of Birth",
@@ -113,7 +115,7 @@ export const HomePurchase = z.object({
         if (month > 12 || day > 31) return false;
 
         return true;
-      }, "You must be at least 18 years old and select a valid date")
+      }, "You must be at least 18 years old")
   ),
 
   loanPurpose: z.string().min(1, "Loan purpose is required"),

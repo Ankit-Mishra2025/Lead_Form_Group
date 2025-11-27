@@ -38,7 +38,7 @@ export const businessLoanSchema = z.object({
         "org",
         "net",
         "in",
-        "co",
+       
         "edu",
         "gov",
         "io",
@@ -49,8 +49,7 @@ export const businessLoanSchema = z.object({
         "ca",
         "au",
         "de",
-        "fr",
-        "jp",
+        
         // you can expand this list as needed
       ];
 

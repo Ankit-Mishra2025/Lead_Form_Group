@@ -53,7 +53,7 @@ lastName: z
         "org",
         "net",
         "in",
-        "co",
+      
         "edu",
         "gov",
         "io",
@@ -64,8 +64,7 @@ lastName: z
         "ca",
         "au",
         "de",
-        "fr",
-        "jp",
+        
         // you can expand this list as needed
       ];
 

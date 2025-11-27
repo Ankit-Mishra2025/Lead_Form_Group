@@ -32,26 +32,32 @@ export default function AutoLoanForm() {
       ? localStorage.getItem("AutoLoanFormData")
       : null;
 
-  const defaultValues: AutoLoanType = storedData
-    ? JSON.parse(storedData)
-    : {
-        autoLoanType: "",
-        loanPaidTime: "",
-        loanamountTime: "",
-        AnnualIncome: "",
-        firstName: "",
-        lastName: "",
-        phone: "",
-        EmploymentStatus: "",
-        Email: "",
-        dob: null,
-        loanPurpose: "",
-        loanAmountValuation: 1000000,
-        creditScore: "",
-        previousLoan: "",
-        AutoModalAndYear: "",
-        AutoMilage: "",
-      };
+  const parsed = storedData ? JSON.parse(storedData) : null;
+
+const defaultValues: AutoLoanType = parsed
+  ? {
+      ...parsed,
+      loanAmountValuation: Number(parsed.loanAmountValuation || 1000000),
+    }
+  : {
+      autoLoanType: "",
+      loanPaidTime: "",
+      loanamountTime: "",
+      AnnualIncome: "",
+      firstName: "",
+      lastName: "",
+      phone: "",
+      EmploymentStatus: "",
+      Email: "",
+      dob: null,
+      loanPurpose: "",
+      loanAmountValuation: 1000000, // number ✔
+      creditScore: "",
+      previousLoan: "",
+      AutoModalAndYear: "",
+      AutoMilage: "",
+    };
+
 
   const {
     control,
@@ -68,7 +74,14 @@ export default function AutoLoanForm() {
   const allValues = watch();
   // -- Persist form data to localStorage ---
   useEffect(() => {
-    localStorage.setItem("AutoLoanFormData", JSON.stringify(allValues));
+    localStorage.setItem(
+  "AutoLoanFormData",
+  JSON.stringify({
+    ...allValues,
+    loanAmountValuation: Number(allValues.loanAmountValuation),
+  })
+);
+
   }, [allValues]);
 
   useEffect(() => {
@@ -128,7 +141,7 @@ export default function AutoLoanForm() {
   const prevStep = () => setCurrentStep((prev) => Math.max(prev - 1, 0));
 
   const inputClass = `
-    w-full mt-8 px-3 py-3.5 text-[14px] sm:text-[14px] md:text-[16px]
+    w-full mt-8 px-3 py-3 text-[14px] sm:text-[14px] md:text-[16px]
     border rounded-lg focus:outline-none focus:ring-1 focus:ring-green-400 focus:bg-green-50 focus:border-green-200
     transition-all duration-300 ease-in-out
     hover:translate-y-1 hover:scale-103
@@ -198,7 +211,7 @@ export default function AutoLoanForm() {
                   {...rhfField}
                   placeholder="Enter 10-digit phone number"
                   maxLength={10}
-                  className={`w-full mt-5 border rounded-xl px-2 py-3 sm:px-4 sm:py-4 text-[14px] sm:text-[16px] md:text-[16px]  text-gray-900 placeholder-gray-400 outline-none transition-all duration-200 focus:ring-1 focus:ring-green-500`}
+                  className={`w-full mt-5 border rounded-xl px-2 py-3 sm:px-4 sm:py-3 text-[14px] sm:text-[16px] md:text-[16px]  text-gray-900 placeholder-gray-400 outline-none transition-all duration-200 focus:ring-1 focus:ring-green-500`}
                 />
               )}
             />
@@ -491,7 +504,7 @@ export default function AutoLoanForm() {
           }}
         />
 
-        <div className="w-full max-w-2xl p-6 md:p-8 rounded-lg z-10">
+        <div className="w-full max-w-xl p-6 md:p-8 rounded-lg z-10">
           <div className="w-full h-1 mb-6 bg-gray-300 rounded-full">
             <div
               className="h-1 bg-green-600 rounded-full transition-all duration-500"
@@ -529,7 +542,7 @@ export default function AutoLoanForm() {
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="w-full sm:w-auto px-8 py-3 sm:px-6 sm:py-3 text-[16px] bg-green-600 hover:bg-green-700 text-white rounded-lg transition ease-in-out duration-200 cursor-pointer hover:border border-green-700"
+                  className="w-full sm:w-auto px-9 py-3 sm:px-6 sm:py-3 text-[16px] bg-green-600 hover:bg-green-700 text-white rounded-lg transition ease-in-out duration-200 cursor-pointer hover:border border-green-700"
                 >
                   Next →
                 </button>

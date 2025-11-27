@@ -16,9 +16,6 @@ export const personalLoanSchema = z.object({
       message: "Only up to 1 spaces allowed",
     }),
 
-  
-
-
   lastName: z
     .string()
     .min(2, "Last name must be at least 2 characters")
@@ -59,10 +56,6 @@ export const personalLoanSchema = z.object({
         const age = differenceInYears(new Date(), date);
         if (age < 18) return false;
 
-        
-
-
-
         // Month & Day validation
         const month = date.getMonth() + 1; // 0-based
         const day = date.getDate();
@@ -82,7 +75,7 @@ export const personalLoanSchema = z.object({
         "org",
         "net",
         "in",
-        "co",
+
         "edu",
         "gov",
         "io",
@@ -92,9 +85,7 @@ export const personalLoanSchema = z.object({
         "uk",
         "ca",
         "au",
-        "de",
-        "fr",
-        "jp",
+
         // you can expand this list as needed
       ];
 

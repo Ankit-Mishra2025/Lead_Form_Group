@@ -126,7 +126,7 @@ export default function DebtReliefForm() {
   const prevStep = () => setCurrentStep((prev) => Math.max(prev - 1, 0));
 
   const inputClass = `
-    w-full mt-8 px-3 py-3 text-[16px] sm:text-[14px] md:text-[16px]
+    w-full mt-3 px-3 py-3 text-[16px] sm:text-[14px] md:text-[16px]
     border rounded-lg focus:outline-none focus:ring-1 focus:ring-green-400 focus:bg-green-50 focus:border-green-200
     transition-all duration-300 ease-in-out
     hover:translate-y-1 hover:scale-103
@@ -140,7 +140,7 @@ export default function DebtReliefForm() {
       case "email":
         return (
           <div key={name} className="flex flex-col mb-6 w-full">
-            <label className="mb-3 my-6 text-[28px] sm:text-[25px] md:text-4xl text-center text-gray-800 leading-snug font-semibold">
+            <label className="mb-3 my-2 text-[28px] sm:text-[25px] md:text-4xl text-center text-gray-800 leading-snug font-semibold">
               {field.label}
             </label>
             <Controller
@@ -200,7 +200,7 @@ export default function DebtReliefForm() {
                   {...rhfField}
                   placeholder="Enter 10-digit phone number"
                   maxLength={10}
-                  className={`w-[250px] md:w-full mt-5 border rounded-xl px-3 py-3 sm:px-3 sm:py-4 text-[15px] sm:text-[16px] md:text-[16px]  text-gray-900 placeholder-gray-400 outline-none transition-all duration-200 focus:ring-1 focus:ring-green-500 ${
+                  className={`w-[250px] md:w-full mt-5 border rounded-xl px-3 py-3 sm:px-3 sm:py-4 text-[15px] sm:text-[16px] md:text-[16px]  text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-400 focus:bg-green-50 focus:border-green-200 transition-all ${
                     errors[name]
                       ? "border-red-500 text-red-600 focus:ring-red-400"
                       : "border-gray-300 focus:border-blue-500"
@@ -221,7 +221,7 @@ export default function DebtReliefForm() {
         return (
           <div key={name} className="flex flex-col mb-8">
             {/* Label */}
-            <label className="mb-3 my-4 text-[28px] sm:text-[25px] md:text-4xl text-center text-gray-800 leading-snug">
+            <label className="mb-3 my-4 text-[28px] sm:text-[25px] md:text-4xl text-center text-gray-800 leading-snug font-semibold">
               {field.label}
             </label>
 
@@ -522,7 +522,7 @@ export default function DebtReliefForm() {
         }}
       />
       <div className="relative flex flex-col items-center justify-center  md:p-12  rounded-4xl ">
-        <div className="w-full max-w-2xl  md:p-8 rounded-2xl  ">
+        <div className="w-full max-w-xl  md:p-8 rounded-2xl  ">
           <div className="w-full h-1 mb-6 bg-gray-300 rounded-full">
             <div
               className="h-1 bg-green-600 rounded-full transition-all duration-500"
@@ -532,7 +532,7 @@ export default function DebtReliefForm() {
 
           <form
             onSubmit={handleSubmit(onSubmit, onError)}
-            className=" rounded-2xl shadow-2xs mt-3 p-3"
+            className=" rounded-2xl  mt-3 p-3"
           >
             <div className="flex justify-center items-center mb-5 ">
               <h1 className="text-[16px] text-green-600">Debt Relief Loan</h1>
@@ -579,7 +579,7 @@ export default function DebtReliefForm() {
                 bg-green-600 hover:bg-green-700 
                 text-white  font-semibold
                 rounded-lg 
-                mt-10 
+                mt-3 
                 transition ease-in-out duration-200 
                 cursor-pointer"
                 >

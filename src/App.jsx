@@ -12,7 +12,7 @@ import Footer from "./Components/Footer";
 import HomePageWorkBanner from "./LoanPagesBanners/HomePageWorkBanner";
 import HomePageChhoseReason from "./LoanPagesBanners/HomePageChhoseReason";
 import HomePageTrust from "./LoanPagesBanners/HomePageTrust";
-import FinanceSlider from "./SliderPage/FinanceSlider";
+import FinanceSlider from "./SliderData/FinanceSlider";
 import LoanTypesRouting from "./routingPages/LoanTypesRouting";
 import AutoSellValuation from "./LoanForms/forms/components/AutoSellForm/AutoSellValuation";
 import BikeValuationLoan from "./LoanForms/forms/components/BikeSellLoanForm/BikeValuationLoan";

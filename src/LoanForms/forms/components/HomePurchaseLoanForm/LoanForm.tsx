@@ -292,79 +292,92 @@ export default function HomeLoan() {
 
     
       case "date":
-        return (
-          <div key={name} className="flex flex-col mb-8">
-            {/* Label */}
-            <label className="mb-3 text-[28px] sm:text-[25px] md:text-4xl  text-center font-semibold text-black leading-snug w-[250px]  md:w-full">
-              {field.label}
-            </label>
-
-            {/* Date Picker */}
-            <Controller
-              name={name}
-              control={control}
-              render={({ field: rhfField }) => (
-                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                  <DatePicker
-                    {...rhfField}
-                    disableFuture
-                    openTo="year"
-                    views={["year", "month", "day"]}
-                    onChange={(date) => rhfField.onChange(date)}
-                    maxDate={
-                      new Date(
-                        new Date().setFullYear(new Date().getFullYear() - 18)
-                      )
-                    }
-                    slotProps={{
-                      textField: {
-                        fullWidth: true,
-                        placeholder: field.placeholder || "DD/MM/YYYY",
-                        InputLabelProps: {
-                          sx: {
-                            fontSize: "1.05rem",
-                            fontWeight: 500,
-                            color: "text.secondary",
-                          },
-                        },
-                        sx: {
-                          // Overall input styling
-                          mt: 2, // <-- Adds top margin between label and input
-                          "& .MuiOutlinedInput-root": {
-                            borderRadius: "12px",
-                            backgroundColor: "#fff",
-                            transition: "all 0.3s ease",
-                            "&:hover": {
-                              transform: "scale(1.01)",
-                              borderColor: "#16A34A",
-                            },
-                            "&.Mui-focused fieldset": {
-                              borderColor: "#16A34A", // Green border
-                              boxShadow: "0 0 0 2px rgba(34,197,94,0.2)",
-                              backgroundColor: "#BBF7D0", // bg-green-200 equivalent
-                            },
-                          },
-                          "& input": {
-                            padding: "16px 20px",
-                            fontSize: "1rem",
-                            fontWeight: 500,
-                          },
-                        },
-                      },
-                    }}
-                  />
-                </LocalizationProvider>
-              )}
-            />
-
-            {/* Error Message */}
-             {(errors as any)[name] && (
-              <span className="text-red-500 text-sm md:text-base mt-1">
-                {(errors as any)[name]?.message}
-              </span>
-            )}
-          </div>
-        );
+       return (
+                 <div key={name} className="flex flex-col mb-8">
+                   <label className="mb-3 my-6 text-[28px] sm:text-[25px] md:text-4xl text-center text-gray-800 leading-snug">
+                     {field.label}
+                   </label>
+       
+                   <Controller
+                     name={name}
+                     control={control}
+                     defaultValue={
+                       defaultValues.dob ? new Date(defaultValues.dob) : null
+                     }
+                     rules={{
+                       required: "Choose your Date of Birth",
+                       validate: (value) => {
+                         if (!value) return "Choose your Date of Birth";
+       
+                         const dateValue =
+                           value instanceof Date ? value : new Date(value);
+                         if (isNaN(dateValue.getTime())) return "Invalid date";
+       
+                         const yearStr = dateValue.getFullYear().toString();
+                         // Must be 4 digits, max 3 zeros allowed, cannot start with zero
+                         if (!/^[1-9][0-9]{0,3}$/.test(yearStr))
+                           return "Please select a valid 4-digit year";
+       
+                         const age = differenceInYears(new Date(), dateValue);
+                         if (age < 18) return "You must be at least 18 years old";
+       
+                         return true;
+                       },
+                     }}
+                     render={({ field: rhfField, fieldState }) => (
+                       <LocalizationProvider dateAdapter={AdapterDateFns}>
+                         <DatePicker
+                           {...rhfField}
+                           disableFuture
+                           openTo="year"
+                           views={["year", "month", "day"]}
+                           onChange={(date) => rhfField.onChange(date)}
+                           value={rhfField.value}
+                           maxDate={
+                             new Date(
+                               new Date().setFullYear(new Date().getFullYear() - 18)
+                             )
+                           }
+                           slotProps={{
+                             textField: {
+                               fullWidth: true,
+                               placeholder: field.placeholder || "DD/MM/YYYY",
+                               error: !!fieldState.error,
+                               helperText: fieldState.error?.message,
+                               InputLabelProps: {
+                                 sx: {
+                                   fontSize: "1.05rem",
+                                   fontWeight: 500,
+                                   color: "text.secondary",
+                                   "&.Mui-focused": { color: "#16A34A" },
+                                 },
+                               },
+                               sx: {
+                                 "& .MuiOutlinedInput-root": {
+                                   borderRadius: "12px",
+                                   transition: "all 0.3s ease",
+                                   backgroundColor: "#fff",
+                                   "&:hover": { transform: "scale(1.01)" },
+                                   "&.Mui-focused fieldset": {
+                                     borderColor: "#16A34A",
+                                     boxShadow: "0 0 0 2px rgba(34,197,94,0.2)",
+                                     backgroundColor: "#F0FDF4",
+                                   },
+                                 },
+                                 "& input": {
+                                   padding: "16px 20px",
+                                   fontSize: { xs: "14px", sm: "16px", md: "16px" },
+                                   fontWeight: 500,
+                                 },
+                               },
+                             },
+                           }}
+                         />
+                       </LocalizationProvider>
+                     )}
+                   />
+                 </div>
+               );
 
       case "select":
         return (
@@ -486,7 +499,7 @@ export default function HomeLoan() {
         />
 
         {/* Form Container */}
-        <div className="w-full max-w-2xl  p-6 md:p-8 rounded-lg  z-10">
+        <div className="w-full max-w-xl  p-6 md:p-8 rounded-lg  z-10">
           {/* Progress Bar */}
           <div className="w-full h-1 mb-6 bg-gray-300 rounded-full">
             <div

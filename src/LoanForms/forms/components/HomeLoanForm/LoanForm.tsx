@@ -134,7 +134,7 @@ export default function HomeLoan() {
   lg:max-w-[600px]         /* large screens */
   xl:max-w-[700px]         /* extra large screens */
 
-  mt-8   px-5 py-3 md:px-3 md:py-3 
+  mt-5   px-5 py-3 md:px-3 md:py-3 
   text-[17px] sm:text-[15px] md:text-[18px]
 
   border rounded-lg
@@ -153,7 +153,7 @@ export default function HomeLoan() {
       case "email":
         return (
           <div key={name} className="flex flex-col mb-6">
-             <label className="mb-3 text-[28px] sm:text-[25px] md:text-4xl  text-center font-semibold text-black leading-snug w-full">
+             <label className="text-[28px] sm:text-[25px] md:text-4xl  text-center font-semibold text-black leading-snug w-full">
               {field.label}
             </label>
 
@@ -209,7 +209,7 @@ export default function HomeLoan() {
                   {...rhfField}
                   placeholder="Enter 10-digit phone number"
                   maxLength={10}
-                  className={`w-[220px] md:w-full mt-5 border rounded-xl px-3 py-3 sm:px-8 sm:py-4 text-[15px] sm:text-[16px] md:text-[16px]  text-gray-900 placeholder-gray-400 outline-none transition-all duration-200 focus:ring-1 focus:ring-green-500 `}
+                  className={`w-[250px] md:w-full mt-5 border rounded-xl px-3 py-3 sm:px-3 sm:py-4 text-[15px] sm:text-[16px] md:text-[16px]  text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-400 focus:bg-green-50 focus:border-green-200 transition-all `}
                 />
               )}
             />
@@ -376,7 +376,7 @@ export default function HomeLoan() {
                 return (
                   <div
                     className="
-                grid grid-cols-2 gap-8 mt-6 justify-items-center
+                grid grid-cols-2 gap-8  justify-items-center
                 sm:grid-cols-2 md:flex md:flex-wrap md:justify-center 
               "
                   >
@@ -484,7 +484,7 @@ export default function HomeLoan() {
         />
 
         {/* Form Container */}
-        <div className="w-full max-w-2xl   md:p-8 rounded-lg  z-10">
+        <div className="w-full max-w-xl   md:p-8 rounded-lg  z-10">
           {/* Progress Bar */}
           <div className="w-full h-1 mb-6 bg-gray-300 rounded-full">
             <div
@@ -547,7 +547,7 @@ export default function HomeLoan() {
                 bg-green-600 hover:bg-green-700 
                 text-white  font-semibold
                 rounded-lg 
-                mt-7
+                mt-9
                 transition ease-in-out duration-200 
                 cursor-pointer"
               >

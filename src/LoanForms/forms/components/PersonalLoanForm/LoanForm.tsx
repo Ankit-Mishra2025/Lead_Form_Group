@@ -211,7 +211,7 @@ export default function PersonalLoanForm() {
                   {...rhfField}
                   placeholder="Enter 10-digit phone number"
                   maxLength={10}
-                  className={`w-full mt-5 border rounded-xl px-2 py-3 sm:px-8 sm:py-4 text-[17px] sm:text-[16px] md:text-[16px]  text-gray-900 placeholder-gray-400 outline-none transition-all duration-200 focus:ring-1 focus:ring-green-500 ${
+                  className={`w-[250px] md:w-full mt-5 border rounded-xl px-3 py-3 sm:px-3 sm:py-4 text-[15px] sm:text-[16px] md:text-[16px]  text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-green-400 focus:bg-green-50 focus:border-green-200 transition-all ${
                     errors[name]
                       ? "border-red-500 text-red-600 text-base focus:ring-red-400"
                       : "border-gray-300 focus:border-blue-500"
@@ -291,7 +291,7 @@ export default function PersonalLoanForm() {
                             backgroundColor: "#fff",
                             "&:hover": { transform: "scale(1.01)" },
                             "&.Mui-focused fieldset": {
-                              borderColor: "#16A34A",
+                            
                               boxShadow: "0 0 0 2px rgba(34,197,94,0.2)",
                               backgroundColor: "#F0FDF4",
                             },
