@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
-import { FinanceData } from "../../public/FinanceSlideData/FinanceData.js";
+
 
 const FinanceSlider = () => {
+
+
+const[financeImageData,setFinanceImageData]=useState([])
+
+const fetchFinanceImage=async()=>{
+try {
+  const data=await fetch("/FinanceSlideData/FinanceData.json")
+  const response=await data.json()
+  console.log(response);
+  
+  setFinanceImageData(response)
+} catch (error) {
+  console.log("Error is",error);
+  
+}
+}
+
+useEffect(()=>{
+fetchFinanceImage()
+},[])
+
   return (
     <div className="w-full py-10 min-h-90">
       <div className="flex w-full items-center flex-col justify-center">
@@ -31,13 +52,24 @@ const FinanceSlider = () => {
           freeMode={true}
           grabCursor={true}
         >
-          {FinanceData.map((item) => (
-            <SwiperSlide key={item.id}>
+
+
+
+          {
+            financeImageData.map((item,idx)=>{
+              return(
+                <div >
+ <SwiperSlide key={idx} >
               <div className="w-[200px] h-[100px] flex items-center justify-center bg-white shadow-lg   rounded-xl p-5 flex-col">
                 <img src={item.image} className="h-[70px] w-[200px]" />
+               
               </div>
             </SwiperSlide>
-          ))}
+                </div>
+              )
+            })
+          }
+          
         </Swiper>
       </div>
     </div>

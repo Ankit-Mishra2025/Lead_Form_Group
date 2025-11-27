@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useState } from "react";
-import { SilderData } from "../SliderData/SliderData.jsx";
+import { SilderData } from "../SliderPage/SliderData.jsx";
 import { motion } from "framer-motion";
 
 const HomePageChhoseReason = () => {
@@ -27,7 +27,6 @@ const HomePageChhoseReason = () => {
       </h2>
 
       <div className="flex items-center w-full gap-3 mt-10 overflow-hidden">
-
         {/* LEFT BUTTON */}
         <button
           onClick={prevPage}
@@ -41,7 +40,7 @@ const HomePageChhoseReason = () => {
         <div className="overflow-hidden w-full">
           <motion.div
             className="flex gap-8"
-            animate={{ x: -(index * 270) }}   // ← MAGIC HERE
+            animate={{ x: -(index * 270) }} // ← MAGIC HERE
             transition={{ duration: 0.6, ease: "easeInOut" }}
           >
             {SilderData.map((item, idx) => (
